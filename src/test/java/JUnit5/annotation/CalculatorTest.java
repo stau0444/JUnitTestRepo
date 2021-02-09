@@ -1,5 +1,6 @@
-package JUnit5;
+package JUnit5.annotation;
 
+import JUnit5.Calculator;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.extension.TestTemplateInvocationContextProvider;
@@ -20,6 +21,7 @@ public class CalculatorTest {
     void addition(){
         Assertions.assertEquals(2,calculator.add(1,1));
     }
+
 
     @ParameterizedTest
     @ValueSource(ints = {1,2,3,4,5})
@@ -59,5 +61,16 @@ public class CalculatorTest {
         System.out.println("displayname 테스트다");
     }
 
-
+    @BeforeEach
+    void BeforeEachTest(){
+        System.out.println("before each가 실행됨");
+    }
+    @Test
+    void AfterBeforeEach(){
+        System.out.println("befor each 다음 실행되는 테스트");
+    }
+    @BeforeAll
+    static void beforeAllTest(){
+        System.out.println("beforeAll 실행됨");
+    }
 }

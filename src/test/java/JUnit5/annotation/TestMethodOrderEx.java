@@ -1,4 +1,4 @@
-package JUnit5;
+package JUnit5.annotation;
 
 import org.junit.jupiter.api.*;
 
